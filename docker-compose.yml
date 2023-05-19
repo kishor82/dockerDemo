@@ -1,0 +1,32 @@
+version: '3'
+services:
+  app1:
+    build:
+      context: ./app1
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - NAME=APP1
+    networks:
+      - mynetwork
+
+  app2:
+    build:
+      context: ./app2
+      dockerfile: Dockerfile
+    ports:
+      - 4000:3000
+    environment:
+      - NAME=APP2
+  db:
+    image: postgres:latest
+    container_name: postgress-test
+    restart: always
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+
+networks:
+  mynetwork:
+    driver: bridge

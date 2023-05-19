@@ -1,0 +1,12 @@
+{
+  "name": "dockerDemo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Kishor Rathva",
+  "license": "MIT",
+  "dependencies": {
+    "i": "^0.3.7",
+    "node-fetch": "^2.6.1",
+    "npm": "^9.6.7"
+  }
+}
